@@ -7,6 +7,7 @@ import { MainLayout } from "./components/Layout/MainLayout";
 import './App.css';
 import {QueryClientProvider} from "@tanstack/react-query";
 import {QueryClient} from "@tanstack/react-query";
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     element : <MainLayout/>,
     children : [
       {
-        path : "/",
+        path : "/home",
         element : <Home/>
       },
       {
@@ -36,6 +37,7 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <RouterProvider router={router}></RouterProvider>
+      <ReactQueryDevtools initialIsOpen={false} />
     </QueryClientProvider>);
 }
 

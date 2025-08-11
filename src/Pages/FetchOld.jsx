@@ -3,10 +3,16 @@ import { useQuery } from "@tanstack/react-query";
 
 export const FetchOld = () => {
     
-    const {data} = useQuery({
+    const {data, isLoading, isError, error, status} = useQuery({
         queryKey:['post'],
-        queryFn: fetchPosts
+        queryFn: fetchPosts,
+        // gcTime:5000, //will consider data to be garbage and will be collected
+        staleTime:3000 //will check if data is fresh
+        // refetchInterval:1000 //can use refetchIntervalInBackground for polling while ta is switched
     })
+
+    if(isLoading) return <>Loading ......</>
+    if(isError) return <>Error happened......{error}{status}</>
 
     return(
         <div>

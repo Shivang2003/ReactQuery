@@ -1,3 +1,10 @@
+import { CommentBox } from "./CommentBox";
+
 export const FetchRQ = () => {
-    return(<h1>FetchRQ</h1>)
+    return(
+        <>
+
+        <CommentBox/>
+        </>
+    )
 }
