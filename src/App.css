@@ -164,3 +164,11 @@ footer {
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.pagination {
+  margin-top: 10% !important;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: 1.2rem;
+}
